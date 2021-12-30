@@ -22,5 +22,5 @@ to
 
 `c.execute("insert into posts values (%s, %s)", (bleach.clean(content), datetime.now(), ))`. 
 
-_New forumdb_solved.py can be downloaded above._
+[New forumdb_solved.py can be downloaded here](https://github.com/alice0217/Intro-to-Relational-Database/blob/main/forum/solution/forumdb_solved.py)
  
