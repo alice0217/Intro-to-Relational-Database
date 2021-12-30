@@ -7,6 +7,7 @@ This course by Udacity introduces the basics of relational databases and SQL. Th
 4. Advanced SQL: learn to perform more advanced SQL queries. 
 
 [Link to Udacity Source Code](https://github.com/udacity/fullstack-nanodegree-vm)
+
 [Link to Udacity Intro to Relational Database Course](https://classroom.udacity.com/courses/ud197)
 
 ## Troubleshooting: ##
