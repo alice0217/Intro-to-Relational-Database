@@ -4,7 +4,6 @@ import psycopg2
 import bleach
 from datetime import datetime
 
-
 # POSTS = [("This is the first post.", datetime.datetime.now())]
 
 def get_posts():
@@ -23,10 +22,8 @@ def get_posts():
 
 def add_post(content):
     """Add a post to the 'database' with the current timestamp."""
-    bleachedContent = bleach.clean(content)
-    content_time = (bleachedContent, str(datetime.now()))
     conn = psycopg2.connect("dbname=forum")
     cursor = conn.cursor()
-    cursor.execute('INSERT INTO posts VALUES %s' % (content_time, ))
+    cursor.execute('INSERT INTO posts VALUES (%s, %s)', (bleach.clean(content), datetime.now()), )
     conn.commit()
     conn.close()
