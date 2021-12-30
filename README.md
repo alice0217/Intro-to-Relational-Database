@@ -14,7 +14,9 @@ This course by Udacity introduces the basics of relational databases and SQL. Th
 
 There is a problem in the forumdb_solved.py from Udacity source code. If you test it, the web forum won't show the time of when the message was posted, even though the tutorial did show time, because they only insert the message content into the table. To solve this problem, we need to import datetime from the datetime library.
 
-Change this `c.execute("insert into posts values (%s)", (bleach.clean(content),))`
+Change this line 
+
+`c.execute("insert into posts values (%s)", (bleach.clean(content),))`
 
 to 
 
