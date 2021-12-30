@@ -1,22 +1,32 @@
-# Database code for the DB Forum, full solution!
+# "Database code" for the DB Forum.
 
-import psycopg2, bleach
+import psycopg2
+import bleach
+from datetime import datetime
 
-DBNAME = "forum"
+
+# POSTS = [("This is the first post.", datetime.datetime.now())]
 
 def get_posts():
-  """Return all posts from the 'database', most recent first."""
-  db = psycopg2.connect(database=DBNAME)
-  c = db.cursor()
-  c.execute("select content, time from posts order by time desc")
-  posts = c.fetchall()
-  db.close()
-  return posts
+    """Return all posts from the 'database', most recent first."""
+    conn = psycopg2.connect("dbname=forum")
+    cursor = conn.cursor()
+    # cursor.execute(" UPDATE posts SET content ='cheese' WHERE content like '%spam%' ")
+    cursor.execute("DELETE FROM posts WHERE content like '%spam%';")
+    cursor.execute("SELECT content, time FROM posts ORDER BY time DESC")
+    results = cursor.fetchall()
+    POSTS = results
+    conn.close()
+    return POSTS
+    # return reversed(POSTS)
+
 
 def add_post(content):
-  """Add a post to the 'database' with the current timestamp."""
-  db = psycopg2.connect(database=DBNAME)
-  c = db.cursor()
-  c.execute("insert into posts values (%s)", (bleach.clean(content),))  # good
-  db.commit()
-  db.close()
+    """Add a post to the 'database' with the current timestamp."""
+    bleachedContent = bleach.clean(content)
+    content_time = (bleachedContent, str(datetime.now()))
+    conn = psycopg2.connect("dbname=forum")
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO posts VALUES %s' % (content_time, ))
+    conn.commit()
+    conn.close()
