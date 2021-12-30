@@ -6,5 +6,5 @@ This course by Udacity introduces the basics of relational databases and SQL. Th
 3. Python Database API: connect Python code up to a database server. 
 4. Advanced SQL: learn to perform more advanced SQL queries. 
 
-[Link to Udacity Source Code]https://github.com/udacity/fullstack-nanodegree-vm
+[Link to Udacity Source Code](https://github.com/udacity/fullstack-nanodegree-vm)
  
