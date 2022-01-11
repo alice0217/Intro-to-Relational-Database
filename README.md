@@ -1,11 +1,5 @@
 # Intro-to-Relational-Database
 
-## Table of Contents
-- [Table of Contents](#table-of-contents)
-- [Intro](#intro)
-- [Troubleshooting](#troubleshooting)
-
-## Intro: ##
 This course by Udacity introduces the basics of relational databases and SQL. There are four lessons in this course:
 1. Relational Concepts: how to organize data in relational databases. 
 2. SQL Queries: how to fetch data out of a database and to insert new data into it. 
